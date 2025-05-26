@@ -1,5 +1,5 @@
 public class SelectionSort {
-     /**
+     /** Imp for interview point of view
       * Selection Sort Algorithm (Steps)
       * Selection Sort Algorithm (Step-by-Step)
       * 1. Start from the first element.
