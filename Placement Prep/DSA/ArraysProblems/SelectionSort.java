@@ -15,7 +15,7 @@ public class SelectionSort {
       * Input: [64, 34, 25, 12, 22, 11, 90]
       * Output: [11, 12, 22, 25, 34, 64, 90]
       */
-      // Selection Sort implementation
+      // Selection Sort implementation..
        public static void selectionSort(int[] arr) {
         int n = arr.length;
 
