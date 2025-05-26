@@ -1,5 +1,5 @@
 public class BubbleSort {
-     /**
+     /** Imp for interview point of view
       * Bubble Sort  Simple Algorithm (Steps)
           * 1. Start with the first element of the array.
           * 2. Compare the current element with the next element.
