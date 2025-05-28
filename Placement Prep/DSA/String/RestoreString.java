@@ -1,4 +1,5 @@
 public class RestoreString {
+     //Important for placement point of view
      public static  String restoreString(String s, int[] indices) {
       int length=s.length();
         StringBuilder sb=new StringBuilder("");
