@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class RotateString {
+     //Important for placement point of view
      public static String rotateStringLeft(String s, int k) {
           if (s == null || s.length() == 0 || k < 0) {
                return s; // Return original if invalid input
