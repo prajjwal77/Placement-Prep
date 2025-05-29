@@ -10,6 +10,7 @@ public class PostOrderTraversalBST {
           }
      }
      // Post-order traversal of a binary search tree (BST)
+     //Resursive approach
      public static void postOrderTraversal(TreeNode root) {
           if (root == null) {
                return;
