@@ -10,6 +10,7 @@ public class PreOrderTraversalBST {
           }
      }
      // Pre-order traversal of a binary search tree (BST)
+     //Recursive Approach
      public static void preOrderTraversal(TreeNode root) {
           if (root == null) {
                return;
