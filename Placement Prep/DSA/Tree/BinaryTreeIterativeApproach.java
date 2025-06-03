@@ -13,6 +13,39 @@ class TreeNode {
 public class BinaryTreeIterativeApproach {
     TreeNode root;
 
+    //search in BST
+    public TreeNode search(int key) {
+        TreeNode current = root;
+        while (current != null) {
+            if (key == current.key) {
+                return current; // Found
+            } else if (key < current.key) {
+                current = current.left; // Go left
+            } else {
+                current = current.right; // Go right
+            }
+        }
+        return null; // Not found
+    }
+    //height of the tree Iteratively
+    public int height() {
+        if (root == null) return 0;
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        int height = 0;
+
+        while (!stack.isEmpty()) {
+            int levelSize = stack.size();
+            for (int i = 0; i < levelSize; i++) {
+                TreeNode node = stack.pop();
+                if (node.left != null) stack.push(node.left);
+                if (node.right != null) stack.push(node.right);
+            }
+            height++;
+        }
+        return height;
+    }
     // Insert without recursion
     public void insert(int key) {
         TreeNode newNode = new TreeNode(key);
@@ -26,12 +59,16 @@ public class BinaryTreeIterativeApproach {
 
         while (current != null) {
             parent = current;
-            if (key < current.key) current = current.left;
-            else current = current.right;
+            if (key < current.key)
+                current = current.left;
+            else
+                current = current.right;
         }
 
-        if (key < parent.key) parent.left = newNode;
-        else parent.right = newNode;
+        if (key < parent.key)
+            parent.left = newNode;
+        else
+            parent.right = newNode;
     }
 
     // Delete without recursion
@@ -41,11 +78,14 @@ public class BinaryTreeIterativeApproach {
         // Search for node
         while (current != null && current.key != key) {
             parent = current;
-            if (key < current.key) current = current.left;
-            else current = current.right;
+            if (key < current.key) 
+                current = current.left;
+            else 
+                current = current.right;
         }
 
-        if (current == null) return; // Not found
+        if (current == null) 
+            return; // Not found
 
         // Case 1: Node has two children
         if (current.left != null && current.right != null) {
