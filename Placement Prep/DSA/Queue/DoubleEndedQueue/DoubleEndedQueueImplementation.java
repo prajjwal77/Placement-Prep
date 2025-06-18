@@ -1,8 +1,8 @@
 package Queue.DoubleEndedQueue;
 
 public class DoubleEndedQueueImplementation {
-     private int[] queue;
-     private int front, rear, size, capacity;
+     private int[] queue;// Array to store queue elements
+     private int front, rear, size, capacity;// Pointers for front and rear, size of the queue, and its capacity
      
      public DoubleEndedQueueImplementation(int capacity) {
           this.capacity = capacity;
@@ -13,11 +13,11 @@ public class DoubleEndedQueueImplementation {
      }
      
      public boolean isFull() {
-          return size == capacity;
+          return size == capacity;// Check if the queue is full
      }
      
      public boolean isEmpty() {
-          return size == 0;
+          return size == 0;// Check if the queue is empty
      }
      
      public void enqueueFront(int item) {
@@ -25,7 +25,10 @@ public class DoubleEndedQueueImplementation {
                throw new RuntimeException("Queue is full");
           }
           front = (front - 1 + capacity) % capacity; // Circular decrement
-          queue[front] = item;
+          queue[front] = item;// Insert item at the front
+          
+               rear = front; // If queue was empty, set rear to front
+          
           size++;
      }
      
@@ -34,7 +37,10 @@ public class DoubleEndedQueueImplementation {
                throw new RuntimeException("Queue is full");
           }
           rear = (rear + 1) % capacity; // Circular increment
-          queue[rear] = item;
+          queue[rear] = item;// Insert item at the rear
+         
+               front = rear; // If queue was empty, set front to rear
+          
           size++;
      }
      
@@ -42,10 +48,10 @@ public class DoubleEndedQueueImplementation {
           if (isEmpty()) {
                throw new RuntimeException("Queue is empty");
           }
-          int item = queue[front];
+          int item = queue[front];// Remove item from the front
           front = (front + 1) % capacity; // Circular increment
-          size--;
-          return item;
+          size--;// Decrease size
+          return item;// Return the removed item
      }
      
      public int dequeueRear() {
