@@ -1,3 +1,8 @@
+/** About Min Sum Circular :  
+      * Given a circular array A, find the minimum subarray sum.
+      * The subarray can be non-contiguous and can wrap around the end of the array.
+      * This problem is similar to Maximum Sum Circular Subarray but focuses on the minimum sum.
+      */
 public class MinSumCircularSubarray {
      public static int minSubarraySumCircular(int[] A) {
           int total = 0, maxSum = Integer.MIN_VALUE, minSum = Integer.MAX_VALUE;
