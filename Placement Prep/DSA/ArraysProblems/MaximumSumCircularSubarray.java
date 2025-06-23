@@ -1,3 +1,8 @@
+/** About Max Sum Array : 
+ * Given a circular array A, find the maximum subarray sum.
+ * The subarray can be non-contiguous and can wrap around the end of the array.
+ * This problem is similar to Minimum Sum Circular Subarray but focuses on the maximum sum.
+ */
 public class MaximumSumCircularSubarray {
      public static int maxSubarraySumCircular(int[] A) {
           int total = 0, maxSum = Integer.MIN_VALUE, minSum = Integer.MAX_VALUE;
