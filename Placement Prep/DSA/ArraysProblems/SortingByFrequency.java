@@ -1,4 +1,4 @@
-
+//Asked in AMCAT exam
 import java.util.Arrays;
 
 public class SortingByFrequency {
