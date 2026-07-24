@@ -65,7 +65,8 @@ public class LevelOrderTraversal {
 			System.out.println();
 		}
 	}
-	
+	//using Nested Array List
+	//[[1],[2,3],[4,5,6,7]]
 	public static ArrayList<ArrayList<Integer>> treversal(Node1 root){
 		ArrayList<ArrayList<Integer>> result = new ArrayList<>();
 		Queue<Node1> q = new LinkedList<>();
