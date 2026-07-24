@@ -296,6 +296,30 @@ public class LevelOrderTraversal {
 		return node;
 	}
 	//count leaf of the tree
+	public static int countLeaf(Node1 root) {
+		if(root == null) {
+			return 0;
+		}
+		Queue<Node1> q = new LinkedList<>();
+		q.offer(root);
+		int leaf = 0;
+		while(!q.isEmpty()) {
+			int size = q.size();
+			for(int i=0;i<size;i++) {
+				Node1 curr = q.poll();
+				if(curr.left == null && curr.right == null) {
+					leaf++;
+				}
+				if(curr.left != null) {
+					q.offer(curr.left);
+				}
+				if(curr.right != null) {
+					q.offer(curr.right);
+				}
+			}
+		}
+		return leaf;
+	}
 	
 	public static void main(String[] args) {
 		Node1 root = new Node1(1);
@@ -320,5 +344,6 @@ public class LevelOrderTraversal {
 		System.out.println("ZigZag Traversal of the Tree : "+zigzagTraversal(root));
 		System.out.println("Min depth of the tree : "+minDepth(root));
 		System.out.println("Total number of  the Node in this tree : "+ countNodes(root));
+		System.out.println("Total number of the leaves in the Tree : "+countLeaf(root));
 	}
 }
