@@ -65,8 +65,7 @@ public class LevelOrderTraversal {
 			System.out.println();
 		}
 	}
-	//BFS Using Nested List
-	//[ [1],[2,3],[4,5,6,7] ]
+	
 	public static ArrayList<ArrayList<Integer>> treversal(Node1 root){
 		ArrayList<ArrayList<Integer>> result = new ArrayList<>();
 		Queue<Node1> q = new LinkedList<>();
@@ -248,6 +247,55 @@ public class LevelOrderTraversal {
 		}
 		return answer;
 	}
+	
+	//Min - Depth of the tree
+	public static int minDepth(Node1 root) {
+		Queue<Node1> q = new LinkedList<>();
+		int depth = 1;
+		q.offer(root);
+		
+		while(!q.isEmpty()) {
+			int size = q.size();
+			for(int i=0;i<size;i++) {
+				Node1 curr = q.poll();
+				
+				if(curr.left != null && curr.right != null) {
+					return depth;
+				}
+				
+				if(curr.left != null) {
+					q.offer(curr.left);
+				}
+				if(curr.right != null) {
+					q.offer(curr.right);
+				}
+			}
+			depth++;
+		}
+		return depth;
+	}
+	
+	// Count Node of the tree
+	public static int countNodes(Node1 root) {
+		Queue<Node1> q = new LinkedList<>();
+		q.offer(root);
+		int node = 0;
+		while(!q.isEmpty()) {
+			int size = q.size();
+			for(int i=0;i<size;i++) {
+				Node1 curr = q.poll();
+				node++;
+				if(curr.left != null) {
+					q.offer(curr.left);
+				}if(curr.right != null) {
+					q.offer(curr.right);
+				}
+			}
+		}
+		return node;
+	}
+	//count leaf of the tree
+	
 	public static void main(String[] args) {
 		Node1 root = new Node1(1);
 		root.left = new Node1(2);
@@ -269,5 +317,7 @@ public class LevelOrderTraversal {
 		System.out.println("Right view of the tree :"+rightView(root));
 		System.out.println("Bottom-Up traversal of the tree(BFS) : "+bottomUp(root));
 		System.out.println("ZigZag Traversal of the Tree : "+zigzagTraversal(root));
+		System.out.println("Min depth of the tree : "+minDepth(root));
+		System.out.println("Total number of  the Node in this tree : "+ countNodes(root));
 	}
 }
